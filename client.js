@@ -14,9 +14,9 @@ const connect = function () {
   conn.on('connect', () => {
     console.log("Successfully connected to snek server");
     conn.write("Name: JER");
-    setInterval(() => {
-      // conn.write("Move: up");
-    }, 50);
+    // setInterval(() => {
+    //   // conn.write("Move: up");
+    // }, 50);
 
   });
 
@@ -24,7 +24,6 @@ const connect = function () {
   conn.on('data', (data) => {
     console.log(data);
   });
-
 
   return conn;
 }
