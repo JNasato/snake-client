@@ -1,18 +1,34 @@
 const net = require('net');
+const stdin = process.stdin;
 
-/**
- * Establishes connection with the game server
- */
+//  * Establishes connection with the game server
 const connect = function () {
   const conn = net.createConnection({
-    host: '10.0.0.209',
+    host: '50.64.116.162',
     port: 50541
   });
   // interpret incoming data as text
   conn.setEncoding('utf8');
 
+  //sends data when connected
+  conn.on('connect', () => {
+    console.log("Successfully connected to snek server");
+    conn.write("Name: JER");
+    setInterval(() => {
+      // conn.write("Move: up");
+    }, 50);
+
+
+  });
+
+  //returns data from server
   conn.on('data', (data) => {
-    console.log("Data: ", data);
+    console.log(data);
+  });
+
+  //writes data to server
+  stdin.on('data', (input) => {
+    conn.write(input);
   });
 
   return conn;
