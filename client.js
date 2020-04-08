@@ -18,7 +18,6 @@ const connect = function () {
       // conn.write("Move: up");
     }, 50);
 
-
   });
 
   //returns data from server
@@ -26,10 +25,6 @@ const connect = function () {
     console.log(data);
   });
 
-  //writes data to server
-  stdin.on('data', (input) => {
-    conn.write(input);
-  });
 
   return conn;
 }
