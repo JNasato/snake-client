@@ -2,7 +2,7 @@ let connection;
 
 const setupInput = function (conn) {
   connection = conn;
-  console.log("connection")
+
   const stdin = process.stdin;
   stdin.setRawMode(true);
   stdin.setEncoding('utf8');

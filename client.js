@@ -1,4 +1,4 @@
-const { IP, PORT } = require('./constants');
+const { IP, PORT, NAME } = require('./constants');
 const net = require('net');
 
 //  * Establishes connection with the game server
